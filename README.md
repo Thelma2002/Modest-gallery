@@ -1,7 +1,7 @@
 # Modest Photo Gallery
 
 A stylish and interactive photo gallery that allows users to filter images using radio buttons. Designed to showcase modest fashion with a clean, user-friendly interface.
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/045b938f-b84c-4d1e-90b2-5597a78d0a46/deploy-status)](https://app.netlify.com/projects/graceful-meerkat-5a70be/deploys)
 
 
 
