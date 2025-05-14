@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modest Photo Gallery</title>
+   <link rel="stylesheet" href="style.css">
+  
+
+  </head>
+  <body>
+	 <!--radiobuttons for navigation and selection of photo categories-->
+	 <input type="radio" name="photos" id="check1" checked>
+	 <input type="radio" name="photos" id="check2" >
+	 <input type="radio" name="photos" id="check3" >
+	 <input type="radio" name="photos" id="check4" >
+	 
+	 <!--Container Div that will contain a div for the top-content-->
+	 <main>
+	 <div class="container">
+		<h1>Modest Women Photo Gallery</h1>
+		<img class="logo" src="images\logo (1).png" width="200" height="200">
+		 <!--within the top content div there will be labels for the categories-->
+		<div class="top-content">
+			<h3>Photo Gallery</h3>
+			<label for="check1">All Photos</label>
+			<label for="check2">Dresses</label>
+			<label for="check3">Skirts</label>
+			<label for="check4">Trousers</label>
+		</div>
+		<!--another div that will contain the photo gallery. Within this div there will be Divs for each photo, these divs will have the same class name
+	 the difference will be the src -->
+	 <div class="photo-gallery">
+	 <!--This does not mean one class — it actually means the element has multiple classes-->
+	 <!--first-->
+		<div class="pic dress">
+		<img src="images/dress.jpg">
+		</div>
+		
+		<div class="pic skirt">
+		<img src="images/skirt.jpg">
+		</div>
+		
+		<div class="pic pants">
+		<img src="images/pant.jpg">
+		</div>
+		<!--second-->
+		<div class="pic dress">
+		<img src="images/dress (2).jpg">
+		</div>
+		
+		<div class="pic skirt">
+		<img src="images/skirt (2).jpg">
+		</div>
+		
+		<div class="pic pants">
+		<img src="images/pant (2).jpg">
+		</div>
+		<!--third-->
+		<div class="pic dress">
+		<img src="images/dress (3).jpg">
+		</div>
+		
+		<div class="pic skirt">
+		<img src="images/skirt (3).jpg">
+		</div>
+		
+		<div class="pic pants">
+		<img src="images/pant (3).jpg">
+		</div>
+		<!--forth-->
+		<div class="pic dress">
+		<img src="images/dress (4).jpg">
+		</div>
+		<!--fifth-->
+		<div class="pic dress">
+		<img src="images/dress (5).jpg">
+		</div>
+		
+		
+	 </div>
+	 </div>
+	 
+	 
+	 </main>
+	 
+	 <footer> &copy; 2025 LT ZULU</footer>
+	 
+	 
+  </body>
+ </html>

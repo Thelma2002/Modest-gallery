@@ -1,0 +1,230 @@
+/*Set the CSS normalisation, box sizing and font family*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+/*remove the display on the input (radiobuttons)*/
+input {
+	display: none;
+}
+/*style the container div by setting the width and aligning it */
+.container {
+	width: 100%;
+	text-align: center; 
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.logo {
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid pink;
+  animation: float 4s infinite ease-in-out;
+}
+/* H1, set the weight, size, position and margin */
+h1 {
+	
+	font-weight: normal; /* this is the boldness */
+	font-size: 35px; /* size of the text */
+	position: relative; /* allows absolute positioning of pseudo-elements like ::before */
+	margin: 40px 0; /* moves it downwards, the 0 is for left/right margin */
+}
+
+/* decoration to the h1 */
+h1::before {
+	content: ""; /* creates an empty element before h1 */
+	position: absolute; /* position it relative to h1 */
+	width: 100px; /* width of the red line */
+	height: 3px; /* thickness of the red line */
+	background-color: pink; /* color of the line */
+	bottom: -10px; /* positions the line below the text */
+	left: 50%; /* centers it horizontally */
+	transform: translateX(-50%); /* offsets by half its width to align center */
+	animation: animate 4s linear infinite; /* applies continuous animation */
+}
+/*keyframes for the movement of the line*/
+@keyframes animate {
+	0% {
+		width: 100px; /* start with 100px width */
+	}
+	50% {
+		width: 200px; /* expand to 200px at halfway */
+	}
+	100% {
+		width: 100px; /* return to 100px at the end */
+	}
+}
+
+/* top-content side bar*/
+.top-content {
+	background-color: beige; /* background color of the section */
+	width: 200px; /* narrow for a sidebar */
+	height: auto; /* based on the content */
+	display: flex; /* flexbox */
+	flex-direction: column; /* stack children vertically */
+	align-items: flex-start; /* align to top */
+	border-radius: 5px; /* curve the box on the sides*/
+	padding: 10px; /* */
+	box-shadow: 3px 3px 5px lightgray;
+	position: absolute;
+	top: 325px;/* adjust to move down from the top*/
+	left: 20px;/*Align to the left side*/
+}
+
+
+h3 {
+	height: 100%; /* take full height of the parent */
+	background-color: olive; /* background color */
+	line-height: normal; /* vertically center the text */
+	padding: 0 50px; /* left and right padding */
+	color: white; /* text color */
+}
+
+label {
+	display: block; /* each label on its own line */
+	height: 100%; /* full height of the parent */
+	margin: 0 20px; /* horizontal spacing between labels */
+	line-height: 60px; /* vertical center alignment */
+	font-size: 18px; /* size of the label text */
+	color: gray; /* default text color */
+	cursor: pointer; /* changes mouse to hand on hover */
+	transition: color .5s; /* smooth color change on hover over 0.5 seconds */
+}
+
+label:hover {
+	color: black; /* text color changes to black when hovered */
+}
+.photo-gallery {
+	width: calc(100%-250px); /* gallery takes 90% of the page width */
+	margin-left: 250px; /* center the gallery horizontally */
+	display: grid; /* use CSS grid layout */
+	grid-template-columns: repeat(4, 1fr); /* create 4 equal columns */
+	grid-gap: 20px; /* space between the grid items */
+}
+
+.pic {
+	position: relative; /* used for positioning the ::before and ::after pseudo-elements */
+	height: 320px; /* fixed height for each photo box */
+	border-radius: 10px; /* rounded corners */
+	box-shadow: 2px 2px 4px gray; /* shadow for a lifted look */
+}
+
+.pic img {
+	width: 100%; /* image fills the container width */
+	height: 100%; /* image fills the container height */
+	object-fit: cover;
+	border-radius: 10px; /* same rounded corners as .pic */
+	transition: .5s;
+}
+
+.pic::before {
+	content: "Modesty"; /* text overlay */
+	position: absolute; /* place over the image */
+	top: 50%; /* vertical center */
+	left: 50%; /* horizontal center */
+	transform: translate(-50%, -50%); /* perfect centering */
+	color: gray; /* text color */
+	font-size: 22px; /* text size */
+	font-weight: bold; /* bold text */
+	width: 100%; /* full width for alignment */
+	margin-top: -100px; /* move text up slightly */
+	opacity: 0; /* hide text by default */
+	transition: opacity 0.3s; /* smooth show effect */
+	transition-delay: 0.2s; /* slight delay before showing */
+	cursor: pointer; /* show pointer on hover */
+	z-index: 1;
+}
+
+.pic::after {
+	content: ""; /* empty element for hover effect */
+	position: absolute; /* place over image */
+	width: 100%; /* full width */
+	bottom: 0; /* align to bottom */
+	left: 0; /* start from left */
+	border-radius: 10px; /* match corners */
+	height: 0; /* hidden initially */
+	background-color: rgba(0,0,0, .4); /* overlay color */
+	transition: height 0.3s; /* animate height on hover */
+}
+
+/* combine hover effects properly */
+.pic:hover::before {
+	opacity: 1; /* show the "Modesty" text */
+}
+
+.pic:hover::after {
+	height: 100%; /* make white overlay expand on hover */
+}
+/* Show all photos when #check1 is selected */
+#check1:checked ~ main .container .photo-gallery .pic {
+    opacity: 1; /* Make the photo visible */
+    transform: scale(1); /* Original size */
+    position: relative; /* Part of normal layout */
+    transition: .5s; /* Smooth transition */
+}
+
+/* Show only .dress photos when #check2 is selected */
+#check2:checked ~ main .container .photo-gallery .pic {
+    opacity: 0; /* Hide all */
+    transform: scale(0);
+    position: absolute;
+}
+
+#check2:checked ~ main .container .photo-gallery .dress {
+    opacity: 1; /* Show only dresses */
+    transform: scale(1);
+    position: relative;
+}
+
+/* Show only .skirt photos when #check3 is selected */
+#check3:checked ~ main .container .photo-gallery .pic {
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+}
+
+#check3:checked ~ main .container .photo-gallery .skirt {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+}
+
+/* Show only .pants photos when #check4 is selected */
+#check4:checked ~ main .container .photo-gallery .pic {
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+}
+
+#check4:checked ~ main .container .photo-gallery .pants {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  background-color: olive; /* Matches h3 background */
+  color: white;
+  font-size: 16px;
+  position: relative; /* Allows content to push it down */
+  margin-top: 25px; /* Creates space between last images and footer */
+}
+
+
+
+
+
+
+
+	
