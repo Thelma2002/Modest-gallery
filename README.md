@@ -24,7 +24,3 @@ A stylish and interactive photo gallery that allows users to filter images using
 - CSS for styling and animations
 - Google Fonts for enhanced typography
 - Flexbox & Grid for layout control
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
