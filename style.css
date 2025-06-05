@@ -10,10 +10,11 @@ input {
 	display: none;
 }
 /*style the container div by setting the width and aligning it */
-.container {
-	width: 100%;
-	text-align: center; 
-}
+	.container {
+		width: 100%;
+		text-align: center; 
+	}
+
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
