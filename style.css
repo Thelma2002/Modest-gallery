@@ -32,154 +32,153 @@ input {
 /* H1, set the weight, size, position and margin */
 h1 {
 	
-	font-weight: normal; /* this is the boldness */
-	font-size: 35px; /* size of the text */
-	position: relative; /* allows absolute positioning of pseudo-elements like ::before */
-	margin: 40px 0; /* moves it downwards, the 0 is for left/right margin */
+	font-weight: normal; 
+	font-size: 35px;
+	position: relative; 
+	margin: 40px 0;
 }
 
 /* decoration to the h1 */
 h1::before {
-	content: ""; /* creates an empty element before h1 */
-	position: absolute; /* position it relative to h1 */
-	width: 100px; /* width of the red line */
-	height: 3px; /* thickness of the red line */
-	background-color: pink; /* color of the line */
-	bottom: -10px; /* positions the line below the text */
-	left: 50%; /* centers it horizontally */
-	transform: translateX(-50%); /* offsets by half its width to align center */
-	animation: animate 4s linear infinite; /* applies continuous animation */
+	content: ""; 
+	position: absolute; 
+	width: 100px; 
+	height: 3px; 
+	background-color: pink; 
+	bottom: -10px; 
+	left: 50%; 
+	transform: translateX(-50%); 
+	animation: animate 4s linear infinite; 
 }
 /*keyframes for the movement of the line*/
 @keyframes animate {
 	0% {
-		width: 100px; /* start with 100px width */
+		width: 100px; 
 	}
 	50% {
-		width: 200px; /* expand to 200px at halfway */
+		width: 200px; 
 	}
 	100% {
-		width: 100px; /* return to 100px at the end */
+		width: 100px; 
 	}
 }
 
 /* top-content side bar*/
 .top-content {
-	background-color: beige; /* background color of the section */
-	width: 200px; /* narrow for a sidebar */
-	height: auto; /* based on the content */
-	display: flex; /* flexbox */
-	flex-direction: column; /* stack children vertically */
-	align-items: flex-start; /* align to top */
-	border-radius: 5px; /* curve the box on the sides*/
-	padding: 10px; /* */
+	background-color: beige; 
+	width: 200px; 
+	height: auto; 
+	display: flex; 
+	flex-direction: column; 
+	align-items: flex-start; 
+	border-radius: 5px; 
+	padding: 10px; 
 	box-shadow: 3px 3px 5px lightgray;
 	position: absolute;
-	top: 325px;/* adjust to move down from the top*/
-	left: 20px;/*Align to the left side*/
+	top: 325px;
+	left: 20px;
 }
 
 
 h3 {
-	height: 100%; /* take full height of the parent */
-	background-color: olive; /* background color */
-	line-height: normal; /* vertically center the text */
-	padding: 0 50px; /* left and right padding */
-	color: white; /* text color */
+	height: 100%; 
+	background-color: olive; 
+	line-height: normal; 
+	padding: 0 50px; 
+	color: white; 
 }
 
 label {
-	display: block; /* each label on its own line */
-	height: 100%; /* full height of the parent */
-	margin: 0 20px; /* horizontal spacing between labels */
-	line-height: 60px; /* vertical center alignment */
-	font-size: 18px; /* size of the label text */
-	color: gray; /* default text color */
-	cursor: pointer; /* changes mouse to hand on hover */
-	transition: color .5s; /* smooth color change on hover over 0.5 seconds */
+	display: block; 
+	height: 100%;
+	margin: 0 20px; 
+	line-height: 60px; 
+	font-size: 18px; 
+	color: gray; 
+	cursor: pointer; 
+	transition: color .5s; 
 }
 
 label:hover {
-	color: black; /* text color changes to black when hovered */
+	color: black; 
 }
 .photo-gallery {
-	width: calc(100%-250px); /* gallery takes 90% of the page width */
-	margin-left: 250px; /* center the gallery horizontally */
-	display: grid; /* use CSS grid layout */
-	grid-template-columns: repeat(4, 1fr); /* create 4 equal columns */
-	grid-gap: 20px; /* space between the grid items */
+	width: calc(100%-250px); 
+	margin-left: 250px; 
+	display: grid; 
+	grid-template-columns: repeat(4, 1fr); 
+	grid-gap: 20px; 
 }
 
 .pic {
-	position: relative; /* used for positioning the ::before and ::after pseudo-elements */
-	height: 320px; /* fixed height for each photo box */
-	border-radius: 10px; /* rounded corners */
-	box-shadow: 2px 2px 4px gray; /* shadow for a lifted look */
+	position: relative; 
+	height: 320px; 
+	border-radius: 10px; 
+	box-shadow: 2px 2px 4px gray; 
 }
 
 .pic img {
-	width: 100%; /* image fills the container width */
-	height: 100%; /* image fills the container height */
+	width: 100%; 
+	height: 100%;
 	object-fit: cover;
-	border-radius: 10px; /* same rounded corners as .pic */
+	border-radius: 10px; 
 	transition: .5s;
 }
 
 .pic::before {
-	content: "Modesty"; /* text overlay */
-	position: absolute; /* place over the image */
-	top: 50%; /* vertical center */
-	left: 50%; /* horizontal center */
-	transform: translate(-50%, -50%); /* perfect centering */
-	color: gray; /* text color */
-	font-size: 22px; /* text size */
-	font-weight: bold; /* bold text */
-	width: 100%; /* full width for alignment */
-	margin-top: -100px; /* move text up slightly */
-	opacity: 0; /* hide text by default */
-	transition: opacity 0.3s; /* smooth show effect */
-	transition-delay: 0.2s; /* slight delay before showing */
-	cursor: pointer; /* show pointer on hover */
+	content: "Modesty"; 
+	position: absolute; 
+	top: 50%; 
+	left: 50%; 
+	transform: translate(-50%, -50%); 
+	color: white;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	width: 100%;
+	opacity: 0; 
+	transition: opacity 0.3s; 
+	cursor: pointer;
 	z-index: 1;
 }
 
 .pic::after {
-	content: ""; /* empty element for hover effect */
-	position: absolute; /* place over image */
-	width: 100%; /* full width */
-	bottom: 0; /* align to bottom */
-	left: 0; /* start from left */
-	border-radius: 10px; /* match corners */
-	height: 0; /* hidden initially */
-	background-color: rgba(0,0,0, .4); /* overlay color */
-	transition: height 0.3s; /* animate height on hover */
+	content: "";
+	position: absolute; 
+	width: 100%; 
+	bottom: 0; 
+	left: 0; 
+	border-radius: 10px; 
+	height: 0; 
+	background-color: rgba(0,0,0, .6);
+	transition: height 0.3s; 
 }
 
 /* combine hover effects properly */
 .pic:hover::before {
-	opacity: 1; /* show the "Modesty" text */
+	opacity: 1; 
 }
 
 .pic:hover::after {
-	height: 100%; /* make white overlay expand on hover */
+	height: 100%; 
 }
 /* Show all photos when #check1 is selected */
 #check1:checked ~ main .container .photo-gallery .pic {
-    opacity: 1; /* Make the photo visible */
-    transform: scale(1); /* Original size */
-    position: relative; /* Part of normal layout */
-    transition: .5s; /* Smooth transition */
+    opacity: 1;
+    transform: scale(1); 
+    position: relative; 
+    transition: .5s;
 }
 
 /* Show only .dress photos when #check2 is selected */
 #check2:checked ~ main .container .photo-gallery .pic {
-    opacity: 0; /* Hide all */
+    opacity: 0; 
     transform: scale(0);
     position: absolute;
 }
 
 #check2:checked ~ main .container .photo-gallery .dress {
-    opacity: 1; /* Show only dresses */
+    opacity: 1; 
     transform: scale(1);
     position: relative;
 }
@@ -214,11 +213,12 @@ footer {
   width: 100%;
   text-align: center;
   padding: 15px 0;
-  background-color: olive; /* Matches h3 background */
-  color: white;
+  background-color: #333; 
+  color: #fff; 
   font-size: 16px;
-  position: relative; /* Allows content to push it down */
-  margin-top: 25px; /* Creates space between last images and footer */
+  position: relative;
+  margin-top: 25px;
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2); 
 }
 
 
